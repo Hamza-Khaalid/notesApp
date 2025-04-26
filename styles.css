@@ -1,0 +1,252 @@
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  scrollbar-width: none;
+}
+body {
+  background-color: #d8dbe2;
+  color: rgb(0, 0, 0);
+  /* display: flex; */
+  /* justify-content: center;    Center horizontally */
+  /* align-items: center;        Center vertically */
+  min-height: 100vh; /* Make body full viewport height */
+  margin: 0;
+  /* Remove default margin */
+}
+
+#notes-container {
+  background-color: #1b1b1e;
+  color: #a9bcd0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  /* border-radius: 10px; */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup-container.active {
+  display: flex;
+  opacity: 100%;
+  /* transition: all 0.3s ease; */
+}
+
+#addbtn {
+  position: fixed;
+  margin: 10px;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: 900;
+  background-color: #373f51;
+  color: #a9bcd0;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#addbtn:hover {
+  rotate: 180deg;
+}
+
+.popup-bg {
+  background-color: rgba(0, 0, 0, 0.315);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 50%;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.pop-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* input[type="textarea"]{
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(183, 111, 250);
+    border-radius: 5px;
+    height: 40px;
+} */
+
+#description {
+  width: 94%;
+
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #373f51;
+  border-radius: 5px;
+  height: 190px;
+  min-height: 100px;
+  resize: none;
+}
+
+#addNote {
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  background-color: #373f51;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+#addNote:hover {
+  background-color: rgb(255, 255, 255);
+  color: #373f51;
+  border: 1px solid rgb(183, 111, 250);
+}
+
+#close-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #373f51;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+
+#close-popup:hover {
+  color: rgb(255, 3, 3);
+  /* font-size: 30px; */
+  rotate: 180deg;
+  /* border: 1px solid rgb(183, 111, 250); */
+  /* border-radius: 10px; */
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  color: #373f51;
+  /* margin-bottom: 20px; */
+  text-align: center;
+}
+.card-container-parent {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* Outer card */
+  .outer-card-container {
+    background-color: #a9bcd0;
+    width: 250px;
+    height: 200px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Scrollable area */
+  .card-container {
+    background-color: #a9bcd0;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;  /* grow and take available space */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Button container */
+  .card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Buttons */
+  .noteDeleteButton, .noteEditButton {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .noteDeleteButton {
+    color: red;
+  }
+  
+  .noteEditButton {
+    color: gray;
+  }
+  
+
+  .fade-out {
+    opacity: 1;
+    transform: scale(0.95);
+    transition: fadeOutscale 0.3s forward ease;
+    
+  }
+  @keyframes fadeOutScale {
+    to {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.3s forwards ease;
+  }
+  
+  @keyframes fadeInScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

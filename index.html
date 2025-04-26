@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="notes-container"><h1>NOTES</h1></div>
+
+    <div id="addbtn" onclick="popup()">+</div>
+
+    <!-- add note card -->
+    <div class="card-container-parent" id="note-container">
+
+        <!-- <div class="outer-card-container">
+            
+            <div class="card-container">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. ... Lorem ipsum dolor sit amet.0
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt molestiae illo alias praesentium optio voluptas excepturi omnis accusamus, cupiditate nihil impedit dolores dolorum et perspiciatis numquam exercitationem suscipit officia, inventore vitae? Ipsam distinctio voluptatem, velit provident harum ad dolorum nihil, nisi dolorem accusamus at impedit. Minus suscipit ea modi quae?
+            </div>
+            
+            <div class="card-buttons">
+                <button class="noteEditButton">edit</button>
+                <button class="noteDeleteButton">x</button>
+                
+            </div>
+    
+        </div> -->
+    
+    </div>
+    
+
+
+    <!-- popup when the plus button is clicked -->
+    <div class="popup-container">
+      <div class="popup-bg">
+        <div class="popup">
+          <div class="popup-content">
+            <h2>ADD NOTE</h2>
+            <!-- <input type="textarea" id="note-content" placeholder="Enter your note here..."> -->
+            <textarea
+              name="textarea"
+              id="description"
+              placeholder="Enter your note here..."
+            ></textarea>
+            <button id="addNote">ADD</button>
+            <button id="close-popup">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
